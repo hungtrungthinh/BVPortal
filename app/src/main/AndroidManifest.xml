@@ -8,6 +8,13 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -18,13 +25,7 @@
         <activity
             android:name=".FrontPage"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -39,14 +40,17 @@
 
         <activity
             android:name=".Maps"
+            android:parentActivityName=".FrontPage"
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".News"
             android:label="@string/title_activity_news"
+            android:parentActivityName=".FrontPage"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Directory"
             android:label="@string/title_activity_directory"
+            android:parentActivityName=".FrontPage"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".InsertNews"
@@ -86,7 +90,22 @@
         <activity
             android:name=".InsertNumber"
             android:label="@string/title_activity_insert_number"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".ForgotPassword" />
+        <activity
+            android:name=".NewAccount"
+            android:label="@string/title_activity_new_account" />
+        <activity android:name=".SignInOrRegister">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ScanBarcode"></activity>
     </application>
 
 </manifest>
